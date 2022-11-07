@@ -1,7 +1,7 @@
-import { useMoralis } from "react-moralis"
+import { useMoralis } from "react-moralis";
 
 export default function ManualHeader() {
-    const { enableWeb3 } = useMoralis()
+    const { enableWeb3 } = useMoralis();
 
-    return <div></div>
+    return <div></div>;
 }
