@@ -1,9 +1,9 @@
-// have a function to enter the lottery
 import { useWeb3Contract, useMoralis } from "react-moralis";
 import { abi, contractAddresses } from "../constants";
 import { useEffect, useState } from "react";
 import { BigNumber, ethers, ContractTransaction } from "ethers";
 import { useNotification } from "web3uikit";
+import React from "react";
 
 interface contractAddressesInterface {
     [key: string]: string[];
@@ -84,10 +84,9 @@ export default function LotteryEntrance() {
     };
 
     return (
-        <div className="p-5">
-            Hi from lottery entrance!
+        <div className="p-7">
             {lotteryAddress ? (
-                <div className="">
+                <div>
                     <button
                         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-auto"
                         onClick={async function () {
@@ -104,9 +103,9 @@ export default function LotteryEntrance() {
                             <div>Enter Lottery</div>
                         )}
                     </button>
-                    <div>Entrance Fee: {ethers.utils.formatUnits(entranceFee, "ether")} ETH</div>
-                    <div>Number Of Players: {numPlayers} </div>
-                    <div> Recent Winner: {recentWinner} </div>
+                    <div className="p-5">Entrance Fee: {ethers.utils.formatUnits(entranceFee, "ether")} ETH</div>
+                    <div className="p-5">Number Of Players: {numPlayers} </div>
+                    <div className="p-5"> Recent Winner: {recentWinner} </div>
                 </div>
             ) : (
                 <div>No Lottery Address Detcted</div>
